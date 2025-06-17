@@ -1,0 +1,56 @@
+.prodo {
+  display: flex;
+  flex: 1;
+  gap: 5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  margin: 8rem;
+}
+img {
+  width: 150px;
+  height: 150px;
+  mix-blend-mode: multiply; //satura il fondo bianco della imagine
+}
+.prod {
+  padding: 1rem;
+  border: 1px solid blue;
+  border-radius: 2rem;
+  box-shadow: 5px 10px blue;
+  gap: 3rem;
+}
+.prod:hover {
+  transform: scale(1.2);
+  text-align: center;
+  mix-blend-mode: multiply; //satura il fondo bianco della imagine
+}
+
+p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+}
+
+button {
+  width: 10rem;
+  border-radius: 0.3rem;
+  background-color: black;
+  color: white;
+}
+button:hover {
+  transform: scale(1.1);
+}
+
+//MediaQuery > 1268
+@media screen and (min-width: 1268px) {
+  .prodo {
+    display: flex;
+    flex: 1;
+    height: 100vh;
+    gap: 5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+  }
+}
