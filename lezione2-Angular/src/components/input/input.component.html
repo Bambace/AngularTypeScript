@@ -1,0 +1,13 @@
+<input
+  [(ngModel)]="name"
+  [disabled]="!isEnable"
+  placeholder="inserisci il tuo nome"
+/>
+
+<button (click)="isDisable()">abilita/disabilita</button>
+
+<p [style]="stile">
+  Benvenuto <b>{{ name }}</b>
+</p>
+
+<button (click)="changeColor()">Cambia colore</button>

@@ -1,0 +1,13 @@
+<p *ngIf="isOnline">Benvenuto al nostro profilo!</p>
+
+<h1>Lista spessa:</h1>
+
+<ul *ngFor="let item of listaSpesa">
+  <li>{{ item }}</li>
+</ul>
+
+<h1 *ngIf="isEmpty">Lista di elementi:</h1>
+
+<ul *ngFor="let item of listaElementi">
+  <li>{{ item }}</li>
+</ul>
