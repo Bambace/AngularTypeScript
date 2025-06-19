@@ -1,0 +1,8 @@
+<button (click)="mostraCoordinate($event)">Clicca qui</button>
+<br />
+<!-- cramos el input y le damos la funcino keydown -->
+<!-- a esta funcion keydown le pasamos una variable de ts -->
+<!-- y a esta variable le ponemos el evento con .key que nos da la llave -->
+<input (keydown)="tastoPremuto = $event.key" placeholder="Premi un tasto" />
+<!-- devuelve el boton apretado -->
+<p>hai premuto: {{ tastoPremuto }}</p>

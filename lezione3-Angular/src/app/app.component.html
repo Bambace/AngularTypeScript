@@ -1,0 +1,39 @@
+<Button
+  [style.color]="isActive ? 'white' : 'blue'"
+  (click)="isDarkModeActive()"
+>
+  {{ isActive ? "🌑" : "🌞" }}
+</Button>
+
+<div
+  [ngClass]="isActive ? 'Container-darkMode' : 'Container-lightMode'"
+  class="container"
+></div>
+
+<app-cambia-colore></app-cambia-colore>
+
+<app-cambia-testo-dinamic></app-cambia-testo-dinamic>
+<app-cambia-larghezza></app-cambia-larghezza>
+<hr />
+<br />
+<app-barra-dinamica></app-barra-dinamica>
+<hr />
+<br />
+<app-event></app-event>
+<app-cambia-colore-testo></app-cambia-colore-testo>
+<hr />
+<br />
+<!-- <app-mouse-enter></app-mouse-enter> -->
+
+<br />
+<hr />
+<app-cambia-imagine></app-cambia-imagine>
+<br />
+<hr />
+<app-focus></app-focus>
+<br /><br /><br />
+<app-blur></app-blur>
+
+<hr />
+<br />
+<app-conta-input></app-conta-input>
