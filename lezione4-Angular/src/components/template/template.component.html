@@ -1,0 +1,7 @@
+<div *ngIf="condizione; else messaggioNascosto">
+  <p>Queste messaggio è visibile</p>
+</div>
+
+<ng-template #messaggioNascosto>
+  <p>Il messaggio è nascosto</p>
+</ng-template>
