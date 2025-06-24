@@ -1,0 +1,70 @@
+<form [formGroup]="filmForm" (ngSubmit)="onSubmit()">
+  <label>Titolo:</label>
+  <input type="text" formControlName="titolo" />
+  <div
+    *ngIf="filmForm.get('titolo')?.invalid && filmForm.get('titolo')?.touched"
+  >
+    <p *ngIf="filmForm.get('titolo')?.errors?.['required']">
+      Il titolo e obbligatorio
+    </p>
+    <p *ngIf="filmForm.get('titolo')?.errors?.['minlength']">
+      Il minimo sono 4 caratteri
+    </p>
+  </div>
+
+  <label>Descrizione:</label>
+  <input type="text" formControlName="descrizione" />
+  <div
+    *ngIf="
+      filmForm.get('descrizione')?.invalid &&
+      filmForm.get('descrizione')?.touched
+    "
+  >
+    <p *ngIf="filmForm.get('descrizione')?.errors?.['required']">
+      Il titolo e obbligatorio
+    </p>
+    <p *ngIf="filmForm.get('descrizione')?.errors?.['minlength']">
+      Il minimo sono 20 caratteri
+    </p>
+    <p *ngIf="filmForm.get('descrizione')?.errors?.['maxlength']">
+      Il massimo sono 150 caratteri
+    </p>
+  </div>
+
+  <label>Numero di Visualizzazioni:</label>
+  <input type="number" formControlName="numVisual" />
+  <div
+    *ngIf="
+      filmForm.get('numVisual')?.invalid && filmForm.get('numVisual')?.touched
+    "
+  >
+    <p *ngIf="filmForm.get('numVisual')?.errors?.['required']">
+      Il titolo e obbligatorio
+    </p>
+    <p *ngIf="filmForm.get('numVisual')?.errors?.['minlength']">
+      Il minimo è 0
+    </p>
+  </div>
+
+  <label>Rating</label>
+  <input type="number" formControlName="rating" />
+  <div
+    *ngIf="filmForm.get('rating')?.invalid && filmForm.get('rating')?.touched"
+  >
+    <p *ngIf="filmForm.get('rating')?.errors?.['required']">
+      Il titolo e obbligatorio
+    </p>
+    <p *ngIf="filmForm.get('numvi')?.errors?.['minlength']">Il minimo è 1</p>
+    <p *ngIf="filmForm.get('numvi')?.errors?.['maxlength']">Il massimo è 5</p>
+  </div>
+
+  <label>Stato:</label>
+  <input type="checkbox" name="check" formControlName="stato" />
+
+  <label>Colore di sfondo:</label>
+  <input type="color" name="color" formControlName="coloreSfondo" />
+
+  <button type="submit">invia</button>
+</form>
+
+<div class="card"></div>

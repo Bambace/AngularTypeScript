@@ -1,0 +1,137 @@
+<form #nomeform="ngForm" (ngSubmit)="onSubmit(nomeform)">
+  <label> Nome:</label>
+  <input
+    type="text"
+    name="nome"
+    [(ngModel)]="UtenteForm.Nome"
+    required
+    minlength="3"
+    #nome="ngModel"
+  />
+  <p *ngIf="nome.valid">✔ Il nome è valido</p>
+
+  <label> Cognome:</label>
+  <input
+    type="text"
+    name="cognome"
+    [(ngModel)]="UtenteForm.Cognome"
+    required
+    minlength="3"
+    #cognome="ngModel"
+  />
+
+  <p *ngIf="cognome.valid">✔ Il cognome è valido</p>
+
+  <label> Email:</label>
+  <input
+    type="email"
+    name="email"
+    [(ngModel)]="UtenteForm.Email"
+    required
+    #email="ngModel"
+  />
+
+  <p *ngIf="email.valid">✔ Il email è valido</p>
+
+  <label> Password:</label>
+  <input
+    type="password"
+    name="password"
+    [(ngModel)]="UtenteForm.Password"
+    required
+    minlength="5"
+    pattern="^[a-zA-Z0-9!@#\$%\^\&*_=+-]{5,10}"
+    #password="ngModel"
+  />
+  <p *ngIf="password.valid">✔ La password e valida</p>
+
+  <label> Conferma Password:</label>
+  <input
+    type="password"
+    name="confPassword"
+    (blur)="controllaPasword()"
+    [(ngModel)]="confermaPassword"
+    required
+    #confPassword="ngModel"
+  />
+  <p *ngIf="confPassword.touched && isPasswordEqual">✔ La password è uguale</p>
+
+  <label> Data di Nascita:</label>
+  <input
+    type="date"
+    name="dataDiNascita"
+    [(ngModel)]="UtenteForm.DataDiNascita"
+    required
+    ngModel
+    name="birth"
+  />
+
+  <label> Regione:</label>
+  <input
+    type="text"
+    name="regione"
+    [(ngModel)]="UtenteForm.Regione"
+    required
+    minlength="5"
+    #regione="ngModel"
+  />
+  <p *ngIf="regione.valid">✔ la regione e valida</p>
+
+  <label> Città:</label>
+  <input
+    type="text"
+    name="citta"
+    [(ngModel)]="UtenteForm.Citta"
+    required
+    minlength="5"
+    #citta="ngModel"
+  />
+  <p *ngIf="citta.valid">✔ la città e valida</p>
+
+  <label> Indirizzo:</label>
+  <input
+    type="text"
+    name="indirizzo"
+    [(ngModel)]="UtenteForm.Indirizzo"
+    required
+    minlength="5"
+    #indirizzo="ngModel"
+  />
+  <p *ngIf="indirizzo.valid">✔ l'indirizzo e valido</p>
+
+  <label> Cap:</label>
+  <input
+    type="text"
+    name="cap"
+    [(ngModel)]="UtenteForm.Cap"
+    required
+    minlength="6"
+    #cap="ngModel"
+  />
+
+  <p *ngIf="cap.valid">✔ Il cap e valido</p>
+
+  <label> Telefono:</label>
+  <input
+    type="tel"
+    name="telefono"
+    [(ngModel)]="UtenteForm.Telefono"
+    required
+    minlength="10"
+    #tel="ngModel"
+  />
+  <p *ngIf="tel.valid">✔ Il telefono e valido</p>
+
+  <label> Codice Fiscale:</label>
+  <input
+    type="text"
+    name="codiceFiscale"
+    [(ngModel)]="UtenteForm.CodiceFiscale"
+    required
+    minlength="16"
+    #codFisc="ngModel"
+  />
+  <p *ngIf="codFisc.valid">✔ Il Codice Fiscale e valido</p>
+
+  <button type="submit">Invia</button>
+</form>
