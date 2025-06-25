@@ -1,0 +1,61 @@
+<div class="containerFc">
+  <form class="form" [formGroup]="formFilm" (ngSubmit)="onsubmit()">
+    <label>Titolo: </label>
+    <input type="text" formControlName="titolo" />
+    <div
+      *ngIf="formFilm.get('titolo')?.invalid && formFilm.get('titolo')?.touched"
+    >
+      <p *ngIf="formFilm.get('titolo')?.errors?.['required']">
+        ❌ Titolo è obbligatorio
+      </p>
+    </div>
+
+    <label>Descrizione: </label>
+    <input type="text" formControlName="descrizione" />
+    <div
+      *ngIf="
+        formFilm.get('descrizione')?.invalid &&
+        formFilm.get('descrizione')?.touched
+      "
+    >
+      <p *ngIf="formFilm.get('descrizione')?.errors?.['required']">
+        ❌ Desrizione è obbligatoria
+      </p>
+    </div>
+
+    <label>Colore: </label>
+    <input type="text" formControlName="colore" />
+    <div
+      *ngIf="formFilm.get('colore')?.invalid && formFilm.get('colore')?.touched"
+    >
+      <p *ngIf="formFilm.get('colore')?.errors?.['required']">
+        ❌ Colore obbligatorio
+      </p>
+    </div>
+    <label>Prezzo: </label>
+    <input type="number" min="20" formControlName="prezzo" />
+    <div
+      *ngIf="formFilm.get('prezzo')?.invalid && formFilm.get('prezzo')?.touched"
+    >
+      <p *ngIf="formFilm.get('prezzo')?.errors?.['required']">
+        ❌ Il prezzo e obbligatorio
+      </p>
+      <p *ngIf="formFilm.get('prezzo')?.errors?.['min']">
+        ❌ Il prezzo minimo deve essere 20
+      </p>
+    </div>
+
+    <button type="submit" [disabled]="formFilm.invalid">Invia Dati!</button>
+  </form>
+
+  <!-- li passiamo i datti di oggettoFilms a il figlio cardfilm di questa maniera -->
+  <app-card-film
+    class="CardDinamica"
+    [dati]="this.oggettoFilms"
+  ></app-card-film>
+</div>
+
+<div class="contenitoreCards">
+  <!-- iteriamo su un array di oggetti crati per la interfacia per salvarli -->
+  <app-card-film *ngFor="let films of cardsFims" [dati]="films"></app-card-film>
+</div>
