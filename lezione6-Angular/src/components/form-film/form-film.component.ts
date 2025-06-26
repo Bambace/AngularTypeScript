@@ -19,7 +19,7 @@ interface OggettoFilms {
 @Component({
   selector: 'app-form-film',
   standalone: true,
-  //route outlet:
+
   imports: [CommonModule, ReactiveFormsModule, RouterOutlet, CardFilmComponent],
   templateUrl: './form-film.component.html',
   styleUrl: './form-film.component.scss',

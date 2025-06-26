@@ -1,0 +1,11 @@
+<div [ngClass]="'card'" *ngIf="dati.views > 800" (click)="onClick()">
+  <h2>Titolo: {{ dati.title | titlecase }}</h2>
+  <p class="bodyCard">Body: {{ dati.body }}</p>
+  <p class="tag">Tags: {{ dati.tags }}</p>
+  <ul>
+    Reactions:
+    <li class="like">Likes: {{ dati.reactions.likes }}</li>
+    <li class="dislike">Dislikes {{ dati.reactions.dislikes }}</li>
+  </ul>
+  <p>Views: {{ dati.views }}</p>
+</div>
