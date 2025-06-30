@@ -1,0 +1,7 @@
+<button class="btn" (click)="onClickPp()">Pagina Principale</button>
+<button class="btn" (click)="onClickLogin()">Login</button>
+<button class="btn" (click)="onClickHome()">Home</button>
+<button class="btn" (click)="onClickProduct()">Product</button>
+<button class="btn" [routerLink]="['/query']" [queryParams]="{ id: 25 }">
+  Query
+</button>
